@@ -1,0 +1,26 @@
+<%- include("includes/head.ejs") %>
+
+<body>
+    <h1>username @<%= data.name %>
+    </h1>
+    <p>followers :<%= data.followers %> &nbsp;&nbsp; following : <%= data.following %>
+    </p>
+    <hr>
+    <button>Follow</button>
+
+    <div class="container">
+        <% for (const post of data.posts) {%>
+            <div class="main">
+             <div class="image">
+                 <img src="<%= post.image %>" alt="">
+                </div>
+                 <div class="likes-commebt">
+                     <p> Likes :<%= post.likes %> &nbsp;&nbsp; comments : <%= post.comments %></p>
+                 </div>
+            </div>
+             <% } %>
+    </div>
+    <script src="/app.js"></script>
+</body>
+
+</html>
